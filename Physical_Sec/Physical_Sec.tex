@@ -1,6 +1,12 @@
-\documentclass{beamer}
+% use pdfpc to present
+\documentclass[]{beamer}
 
 \usepackage{color}
+\usepackage{pgfpages}
+\usepackage{url}
+\usepackage{hyperref}
+
+\setbeameroption{show notes on second screen=right}
 
 %TODO: Add Images
 
@@ -87,20 +93,39 @@
   \frametitle{Human Factors}
 \begin{itemize}
   \item Security Guards
+  \item Other Employees
 
 \end{itemize}
 \end{frame}
 
 \begin{frame}
   \frametitle{Security Guards}
+  \begin{columns}[c]
+    \column{0.5\textwidth}
+    \includegraphics[width=.8\textwidth]{Security-Guard}
+    \column{0.5\textwidth}
+
+  \end{columns}
+\note[item]{is there a way around the guards}
+\note[item]{how attentive are they}
+\note[item]{are they getting distracted}
+
 \end{frame}
+
+
 
 \begin{frame}
   \frametitle{Other Employees}
+  \includegraphics[width=.9\textwidth]{tailgating}
+  \note[item]{tailgating}
+  \note[item]{social engineering}
+  \note[item]{bribery}
 \end{frame}
 
 \begin{frame}
   \frametitle{doors}
+  \begin{columns}[c]
+    \column{0.5\textwidth}
   \begin{itemize}
     \item frame gap
     \item REX sensor
@@ -108,6 +133,10 @@
     \item hinges
     \item door fit
   \end{itemize}
+  \column{0.5\textwidth}
+  \includegraphics{T-REX}
+\end{columns}
+\note[item]{\url{https://www.youtube.com/watch?v=SDl4AO4ancI}}
 \end{frame}
 
 \begin{frame}
@@ -151,4 +180,16 @@
 \begin{frame}
   \frametitle{Man Traps}
 \end{frame}
+
+\begin{frame}
+  \frametitle{References}
+  \begin{itemize}
+    \item \url{http://www.securityguardpedia.com/wp-content/uploads/2015/02/Security-Guard-East-Region.jpg}
+    \item \url{http://kudos-security.com/wp-content/uploads/2015/06/TAILGATING.png}
+    \item \url{http://cms.dsc.com/media/products/lthumbs/i_T-REX.jpg}
+    \item \url{https://www.youtube.com/watch?v=4YYvBLAF4T8}
+  \end{itemize}
+
+\end{frame}
+
 \end{document}
