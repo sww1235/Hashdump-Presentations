@@ -1,5 +1,8 @@
 \documentclass{beamer}
 
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
 \usepackage{color}
 \usepackage{pgfpages}
 \PassOptionsToPackage{hyphens}{url}
@@ -123,9 +126,10 @@ driven, mobile telephone service Bell/Motorola}
   \frametitle{CDMA}
   \begin{itemize}
     \item Code Division Multiple Access
-    \item Propriatary tech first developed by qualcom
-    \item 2G was cdmaOne, 3G is CDMA2000 / EVDO / 1x
-    \item 2G not encrypted, 3G is
+    \item Propriatary tech first developed by qualcom, later standardized
+    \item Used primarily in US and South Korea, later migrated to Europe and Asia
+    \item 2G was cdmaOne, 3G is CDMA2000 / EVDO (data) / 1x (voice)
+    \item 2G not encrypted?, 3G is
     %TODO look at encryption and evolution of CDMA, evdo etc
   \end{itemize}
   \note[item]{does not limit number of active radios}
@@ -135,27 +139,60 @@ driven, mobile telephone service Bell/Motorola}
 \begin{frame}
   \frametitle{GSM}
   \begin{itemize}
-    \item Time Division Multiple Access
+    \item Time Division Multiple Access (2G) and CDMA (3G)
     \item `open' standard
+    \item Primarily deployed in Europe and Asia, but now deployed across world
     \item had support for encryption
+    \item 2.5G is EDGE
+    \item 3G is UMTS
   \end{itemize}
+  \note[item]{TDMA limits number of active radios per cell}
 \end{frame}
+
+
 
 \begin{frame}
   \frametitle{CDMA encryption}
+  \begin{itemize}
+    \item CAVE (Cellular Authentication and Voice Encryption)
+    \item CDMA2000 and related 3G tech uses 64 bit primary key along w/ 128 bit shared secret
+  \end{itemize}
+  \note[item]{primary key only used to generate shared secret which is used for signing and auth}
+  \note[item]{shared secret is actually 2 64 bit keys, one for auth signatures and one for session key gen}
 \end{frame}
 
 \begin{frame}
   \frametitle{GSM encryption}
+  \begin{itemize}
+    \item uses A5/1 A5/2 and A5/3 stream ciphers for voice
+    \item GPRS uses GEA/1, GEA/2 (vulnerable) and GEA/3 (secure?)
+    \item most countries do not encrypt GPRS data for snooping porpises
+    \item A5/1 has 54 bit key, originally going to be 128 but Germans
+    \item A5/2 is same as A5/1 but without irregular clocking, used for export
+    \item A5/3 aka KASUMI used in 3G GSM
+    \item All three of these are broken.
+  \end{itemize}
+  \note[item]{irregular clocking: essentially randomly chooses shift registers}
 \end{frame}
 
 \begin{frame}
-  \title{GSM encryption debacle}
+  \frametitle{GSM encryption}
+  \begin{itemize}
+    \item A5/1 is vulnerable to known-plaintext attacks with rainbow tables
+    \item A5/2 is vulnerable to known-ciphertext attacks
+    \item both of these can be decrypted in realtime by a 1999 era desktop PC
+
+  \end{itemize}
+  \begin{alertblock}{¡WARNING!}
+    Currently, decrypting GSM traffic using these methods are illegal
+  \end{alertblock}
 \end{frame}
 
 \begin{frame}
   \frametitle{Clipper Chip}
 \end{frame}
+
+
 
 \begin{frame}
   \frametitle{References}[allowframebreaks]
@@ -170,6 +207,10 @@ driven, mobile telephone service Bell/Motorola}
   \url{https://en.wikipedia.org/wiki/2G}
   \url{https://en.wikipedia.org/wiki/CDMA2000}
   \url{https://www.cdg.org/resources/files/white_papers/Qualcomm_Security_Provisions_in_CDMA2000_Networks_80-W3633-1_RevA[2]_Nov2011.pdf}
+  \url{https://www.scribd.com/doc/22599374/Security-Encryption-in-GSM-GPRS-CDMA}
+  \url{https://en.wikipedia.org/wiki/CAVE-based_authentication}
+  \url{http://www.forbes.com/sites/andygreenberg/2011/08/12/codebreaker-karsten-nohl-why-your-phone-is-insecure-by-design/\#7a6b22b72b56}
+  \url{http://www.crypto.com/papers/others/a5.ps}
 \end{frame}
 
 \end{document}
