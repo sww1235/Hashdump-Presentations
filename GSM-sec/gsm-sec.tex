@@ -2,7 +2,7 @@
 
 \usepackage{color}
 \usepackage{pgfpages}
-\usepackage{url}
+\PassOptionsToPackage{hyphens}{url}
 \usepackage{hyperref}
 
 \setbeameroption{show notes on second screen=right}
@@ -21,7 +21,7 @@
   Colorado State University
 }
 \date{\today}
-\subject{subject}
+%\subject{subject}
 
 %beamer template
 \definecolor{HDred}{RGB}{171,31,36}
@@ -81,6 +81,8 @@
 
 \begin{frame}
   \frametitle{Analog}
+  \begin{columns}[c]
+    \column{0.5\textwidth}
   \begin{itemize}
     \item 0G FM VHF half (later full) duplex (1946--2012)
     \begin{itemize}
@@ -94,6 +96,9 @@
       \item 800MHz blocking on scanners in US only
     \end{itemize}
   \end{itemize}
+  \column{0.5\textwidth}
+  \includegraphics[width=.8\textwidth]{Motorola2950}
+\end{columns}
 \note[item]{0G only had 3 frequency pairs at first, everything was operator
 driven, mobile telephone service Bell/Motorola}
 \note[item]{this was later replaced by IMTS (1964) with the convience of \textbf{direct dial}}
@@ -106,9 +111,16 @@ driven, mobile telephone service Bell/Motorola}
 \end{frame}
 
 \begin{frame}
+  \frametitle{Bag Phone Full}
+  \begin{center}
+    \includegraphics[width=.8\textwidth]{Motorola_Bag_Phone_Outside_Bag}
+  \end{center}
+\end{frame}
+
+\begin{frame}
   \frametitle{CDMA}
   \begin{itemize}
-    \item C Division Multiple Access %TODO fix acronym explanation
+    \item Carrier Division Multiple Access %TODO fix acronym explanation
     \item Propriatary tech first developed by qualcom
     %TODO look at encryption and evolution of CDMA, evdo etc
   \end{itemize}
@@ -140,11 +152,13 @@ driven, mobile telephone service Bell/Motorola}
 \end{frame}
 
 \begin{frame}
-  \frametitle{References}
+  \frametitle{References}[allowframebreaks]
   \url{https://en.wikipedia.org/wiki/Mobile_Telephone_Service}
   \url{https://en.wikipedia.org/wiki/Improved_Mobile_Telephone_Service}
   \url{https://en.wikipedia.org/wiki/Advanced_Mobile_Phone_System}
   \url{https://en.wikipedia.org/wiki/0G}
   \url{https://en.wikipedia.org/wiki/1G}
   \url{http://www.arrl.org/forum/topics/view/112}
+  \url{https://upload.wikimedia.org/wikipedia/en/4/46/Motorola2950.jpg}
+  \url{https://upload.wikimedia.org/wikipedia/commons/0/06/Motorola_Bag_Phone_Outside_Bag.JPG}
 \end{frame}
