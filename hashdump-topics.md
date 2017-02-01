@@ -1,0 +1,5 @@
+-   comparison of hashing algorithms
+-   basic structure of various OSs esp related to security
+-   binary exploitation
+-   shell code
+-   history of cryptography
