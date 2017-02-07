@@ -3,3 +3,5 @@
 -   binary exploitation
 -   shell code
 -   history of cryptography
+-   VPNs + usage cases
+-   Password management
