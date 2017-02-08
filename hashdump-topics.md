@@ -4,4 +4,8 @@
 -   shell code
 -   history of cryptography
 -   VPNs + usage cases
+    -   Commercial companies
+    -   OpenVPN
+    -   Mesh
+    -   IPSec
 -   Password management
